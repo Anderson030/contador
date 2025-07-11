@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CRUD OPERATIONS</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>CRUD OPERATIONS</h2>
+    <div class="profile">
+      <img src="assets/img/avatar.png" alt="Admin Photo" />
+      <p class="name">Random guy</p>
+      <p class="role">Admin</p>
+    </div>
+    <nav class="menu">
+      <a href="#" class="menu-item active">🏠 Home</a>
+      <a href="#" class="menu-item">📑 Course</a>
+      <a href="#" class="menu-item">🎓 Users</a>
+      <a href="#" class="menu-item">💳 Payment</a>
+      <a href="#" class="menu-item">📊 Report</a>
+      <a href="#" class="menu-item">⚙️ Settings</a>
+    </nav>
+    <a href="./index.html" class="logout">Logout ⤴️</a>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <!-- Header -->
+    <header class="top-header">
+      <h1>Students List</h1>
+      <div class="header-actions">
+        <input type="search" placeholder="Search..." />
+        <button class="add-btn" id="addBtn">ADD NEW STUDENT</button>
+      </div>
+    </header>
+
+    <!-- Table -->
+    <section class="table-section">
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Enroll Number</th>
+            <th>Date of admission</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="userTableBody">
+          <!-- Filas dinámicas con JS -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Modal (hidden by default) -->
+  <div id="userModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-modal" id="closeModalBtn">&times;</span>
+      <h2 id="modalTitle">Add New Student</h2>
+      <form id="userForm">
+        <input type="hidden" id="userId" />
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="enrollNumber">Enroll Number</label>
+          <input type="text" id="enrollNumber" required />
+        </div>
+        <div class="form-group">
+          <label for="dateOfAdmission">Date of Admission</label>
+          <input type="date" id="dateOfAdmission" required />
+        </div>
+        <button type="submit" class="submit-btn">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
